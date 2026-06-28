@@ -1,0 +1,29 @@
+name: BuildingPlan
+version: '${version}'
+
+main: mc506lw.buildingPlan.BuildingPlan
+api-version: '1.21'
+folia-supported: true
+softdepend: [PlaceholderAPI]
+libraries:
+  - com.h2database:h2:2.3.232
+
+commands:
+  bp:
+    description: BuildingPlan main command
+    usage: /bp [shop|subscribe|admin]
+    permission: buildingplan.use
+
+permissions:
+  buildingplan.use:
+    description: Use basic BuildingPlan commands
+    default: true
+  buildingplan.shop:
+    description: Open BuildingPlan shop
+    default: true
+  buildingplan.subscribe:
+    description: Subscribe to a plan
+    default: true
+  buildingplan.admin:
+    description: Admin commands
+    default: op
